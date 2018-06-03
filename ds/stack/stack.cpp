@@ -29,3 +29,7 @@ T Stack<T>::pop() {
   delete copy;
   return data;
 }
+
+int main() {
+  return 0;
+}

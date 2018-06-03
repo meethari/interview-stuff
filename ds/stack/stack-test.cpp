@@ -1,7 +1,4 @@
-#ifndef __IOSTREAM__INCLUDED__
-#define __IOSTREAM__INCLUDED__
 #include <iostream>
-#endif
 #include "stack.hpp"
 
 using namespace std;
