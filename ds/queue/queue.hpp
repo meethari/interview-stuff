@@ -1,12 +1,13 @@
-class queue {
+template <typename T>
+class queue{
 
 private:
 
   class node {
   public:
-    int data;
+    T data;
     node *next;
-    node(int input);
+    node(T input);
   };
 
   node *head;
@@ -15,10 +16,10 @@ private:
 
 public:
 
-  int isEmpty();
-  int peek();
-  void push(int data);
-  int pop();
+  T isEmpty();
+  T peek();
+  void push(T data);
+  T pop();
 
   queue();
 

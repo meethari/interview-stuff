@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-  queue q1;
+  queue<int> q1;
 
   if (q1.isEmpty()) {
     cout << "Queue is indeed empty" << endl;

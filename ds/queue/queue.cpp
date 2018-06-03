@@ -3,24 +3,29 @@
 
 using namespace std;
 
-queue::node::node(int input) {
+template <typename T>
+queue<T>::node::node(T input) {
   data = input;
   next = nullptr;
 }
 
-queue::queue() {
+template <typename T>
+queue<T>::queue() {
   head = tail = nullptr;
 }
 
-int queue::isEmpty() {
+template <typename T>
+T queue<T>::isEmpty() {
   return head==nullptr;
 }
 
-int queue::peek() {
+template <typename T>
+T queue<T>::peek() {
   return head->data;
 }
 
-void queue::push(int data) {
+template <typename T>
+void queue<T>::push(T data) {
   node *node1;
   node1 = new node(data);
   if (isEmpty()) {
@@ -33,8 +38,9 @@ void queue::push(int data) {
 
 }
 
-int queue::pop() {
-  int val = head->data;
+template <typename T>
+T queue<T>::pop() {
+  T val = head->data;
   delete head;
   head = head->next;
   // if queue becomes empty case
