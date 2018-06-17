@@ -1,28 +1,4 @@
-#include <iostream>
-using namespace std;
-
-template <typename T>
-class LinkedList {
-private:
-  class Node {
-  public:
-    Node *next;
-    T data;
-    Node(T input);
-  };
-
-  Node *head;
-
-public:
-  // constructor
-  LinkedList();
-  void append (T data);
-  void prepend (T data);
-  // because delete is a protected keyword
-  void remove (T data);
-  // solely for debugging purposes
-  void print ();
-};
+#include "ll.hpp"
 
 template <typename T>
 LinkedList<T>::Node::Node(T input) {
@@ -108,19 +84,4 @@ void LinkedList<T>::print() {
   cout << endl;
 }
 
-int main() {
-  LinkedList<int> ll;
-  ll.append(1);
-  ll.append(2);
-  ll.append(3);
-  ll.prepend(4);
-  ll.print();
-  // whoops, shoulda put the four at the end
-  // no worries, we can fix that
-  ll.remove(4);
-  ll.print();
-  ll.append(4);
-  ll.print();
-  // whew, finally.
-  return 0;
-}
+template class LinkedList<int>;

@@ -2,6 +2,7 @@ template <typename T>
 class Stack {
 private:
   class Node {
+  public:
     T data;
     Node *next;
     // next points downards, i.e from head to tail

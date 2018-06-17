@@ -49,3 +49,5 @@ T queue<T>::pop() {
   }
   return val;
 }
+
+template class queue<int>;

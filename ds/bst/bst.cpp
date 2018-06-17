@@ -1,36 +1,4 @@
-#include <iostream>
-
-using namespace std;
-
-/* Implementation of a Binary Tree from HackerRank's YT video
-
-*/
-
-class BinaryTree {
-private:
-  class Node {
-  public:
-    int data;
-    Node *left, *right;
-    Node(int input) {
-      left = nullptr;
-      right = nullptr;
-      data = input;
-    }
-
-    void insert(int input);
-    void find(int input);
-    void traverse();
-
-  };
-  Node *root;
-
-public:
-  BinaryTree();
-  void insert(int data);
-  void find(int data);
-  void traverse();
-};
+#include "bst.hpp"
 
 void BinaryTree::Node::traverse() {
 
@@ -47,6 +15,7 @@ void BinaryTree::Node::traverse() {
     if (right != nullptr)
       right->traverse();
 }
+
 void BinaryTree::Node::insert(int input) {
   if (input <= data) {
     if (left == nullptr) {
@@ -109,20 +78,4 @@ void BinaryTree::traverse() {
 
 void BinaryTree::find(int data) {
   root->find(data);
-}
-
-int main() {
-  BinaryTree b1;
-  b1.insert(9);
-  b1.insert(2);
-  b1.insert(4);
-  b1.insert(3);
-  b1.insert(8);
-  b1.insert(5);
-  b1.insert(7);
-  b1.find(4);
-  b1.find(2);
-  b1.find(3);
-  b1.find(1);
-  b1.traverse();
 }

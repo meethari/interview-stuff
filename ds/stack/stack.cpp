@@ -30,6 +30,4 @@ T Stack<T>::pop() {
   return data;
 }
 
-int main() {
-  return 0;
-}
+template class Stack<int>;
