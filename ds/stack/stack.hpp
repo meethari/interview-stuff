@@ -1,5 +1,5 @@
 template <typename T>
-class Stack {
+class stack {
 private:
   class Node {
   public:
@@ -15,4 +15,5 @@ public:
   T pop();
   T peek();
   int isEmpty();
+  stack();
 };

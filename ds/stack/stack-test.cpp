@@ -4,10 +4,10 @@
 using namespace std;
 
 int main() {
-  Stack<int> s1;
+  stack<int> s1;
 
   if (s1.isEmpty()) {
-    cout << "Stack is indeed empty" << endl;
+    cout << "stack is indeed empty" << endl;
   }
 
   s1.push(1);

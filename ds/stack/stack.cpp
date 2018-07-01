@@ -2,17 +2,23 @@
 #include <iostream>
 
 template <typename T>
-int Stack<T>::isEmpty() {
+stack<T>::stack() {
+  head = nullptr;
+  tail = nullptr;
+}
+
+template <typename T>
+int stack<T>::isEmpty() {
   return head == nullptr;
 }
 
 template <typename T>
-T Stack<T>::peek() {
+T stack<T>::peek() {
   return head->data;
 }
 
 template <typename T>
-void Stack<T>::push(T data) {
+void stack<T>::push(T data) {
   Node *node1;
   node1 = new Node;
   node1->data = data;
@@ -21,7 +27,7 @@ void Stack<T>::push(T data) {
 }
 
 template <typename T>
-T Stack<T>::pop() {
+T stack<T>::pop() {
   Node *copy;
   copy = head;
   head = head->next;
@@ -30,4 +36,4 @@ T Stack<T>::pop() {
   return data;
 }
 
-template class Stack<int>;
+template class stack<int>;
