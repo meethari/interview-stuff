@@ -128,6 +128,7 @@ void graph::searchDijkstra(int source, int destination) {
   // Step 2: Mark the current node (source) as zero distance and the
   // rest as infinite distance
   unsigned int tentative_distances[NODE_COUNT];
+
   for (int i = 0; i < NODE_COUNT; i++) {
     tentative_distances[i] = INT_MAX_HARI;
   }
@@ -136,6 +137,11 @@ void graph::searchDijkstra(int source, int destination) {
   int current_node = source;
 
   // int unreachable_flag = 0
+
+  int parent[NODE_COUNT];
+  for (int i = 0; i < NODE_COUNT; i++) {
+    parent[i] = -1;
+  }
 
   do {
     unsigned int current_node_distance = tentative_distances[current_node];
@@ -153,6 +159,9 @@ void graph::searchDijkstra(int source, int destination) {
         // if the new tentative distance is older than the previous one, replace it
         if (tentative_distances[i] > new_distance) {
           tentative_distances[i] = new_distance;
+          // came up with this on my own
+          // don't understand completely
+          parent[i] = current_node;
         }
       }
     }
@@ -171,12 +180,31 @@ void graph::searchDijkstra(int source, int destination) {
     if (current_node == destination) {
       cout << "Shortest Path Found! The cost is " << current_node_distance;
       cout << endl;
-      cout << endl;
+      /*
       for (int  i = 0; i < NODE_COUNT; i ++) {
-        // TODO: remove once done debugging
+
         cout << "Node: " << i << " Tentative Distance: ";
         cout << tentative_distances[i] << endl;
       }
+      */
+
+      // my own code
+      cout << "Calculating path." << endl;
+
+      stack<int> s1;
+      for (current_node = destination; current_node != source; current_node = parent[current_node])
+        s1.push(current_node);
+      s1.push(source);
+
+      cout << "Printing path:" << endl;
+
+      while (s1.size() != 0) {
+        cout << s1.top() << " ";
+        s1.pop();
+      }
+
+      cout << endl;
+
       return;
     }
 
