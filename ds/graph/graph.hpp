@@ -4,11 +4,12 @@
 
 class graph {
 private:
-  int matrix[NODE_COUNT][NODE_COUNT];
+  unsigned int matrix[NODE_COUNT][NODE_COUNT];
 public:
   graph();
-  void addEdge(int source, int destination);
+  void addEdge(int source, int destination,int weight);
   void deleteEdge(int source, int destination);
   void searchBFS(int source, int destination);
   void searchDFS(int source, int destination);
+  void searchDijkstra(int source, int destination);
 };
