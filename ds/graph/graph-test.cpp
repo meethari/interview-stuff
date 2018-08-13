@@ -11,17 +11,19 @@ int main() {
   g1.addEdge(1, 3, 2);
   g1.addEdge(1, 4, 3);
 
-  g1.addEdge(2, 5, 2);
+  g1.addEdge(2, 5, 20);
   g1.addEdge(5, 8, 2);
   g1.addEdge(8, 11, 2);
 
   g1.addEdge(3, 6, 2);
   g1.addEdge(6, 9, 1);
-  g1.addEdge(9, 11, 7);
+  g1.addEdge(9, 11, 17);
 
   g1.addEdge(4, 7, 1);
-  g1.addEdge(7, 10, 1);
+  g1.addEdge(7, 10, 10);
   g1.addEdge(10, 11, 1);
+
+  g1.addEdge(9, 10, 1);
 
   cout << endl << endl;
 

@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "stack": "cpp",
+        "iterator": "cpp",
+        "ios": "cpp",
+        "algorithm": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "iostream": "cpp"
+    }
+}
